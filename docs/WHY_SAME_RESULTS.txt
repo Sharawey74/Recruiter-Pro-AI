@@ -1,0 +1,85 @@
+"""
+EXPLANATION: Why You're Getting the Same Results
+=================================================
+
+1. THE 3 JOBS ARE FIXED (BY DESIGN)
+   - This system ONLY has 3 canonical jobs
+   - Located at: data/json/jobs_canonical.json
+   - These 3 jobs are:
+     * Digital Artist / Concept Artist
+     * Team Lead Analytics  
+     * Mean Stack/full Stack Web Developer
+   
+   ✅ This is CORRECT behavior - we designed it this way!
+
+2. THE MATCHING IS WORKING CORRECTLY
+   - Your resume was matched against all 3 jobs
+   - The system scored each job based on:
+     * Skills overlap (60% weight)
+     * Experience match (25% weight)
+     * Education (10% weight)
+     * Keywords (5% weight)
+   
+   ✅ The ranking you see (MEAN Stack > Artist > Analytics) is correct!
+
+3. THE PROBLEM: EXPERIENCE EXTRACTION
+   - Your resume shows: "experience_years: 0"
+   - This affects the scoring!
+   - Possible reasons:
+     a) Your PDF/DOCX has broken formatting
+     b) Experience is written in an unusual format
+     c) No explicit "X years of experience" statement
+
+4. WHAT TO CHECK:
+   - Upload your resume again
+   - Click the "View Extracted Text" debug expander
+   - Look for how experience is written in the raw text
+   - Does it say "5 years" or "2019-2024" or similar?
+
+5. EXPERIENCE PATTERNS WE DETECT:
+   ✓ "5 years of experience"
+   ✓ "5+ years experience"  
+   ✓ "Experience: 5 years"
+   ✓ "5 yrs in software"
+   ✓ Date ranges: "2019-2024" or "2019-Present"
+   
+   ✗ We DON'T extract from job titles like "Senior (5+ years)"
+   ✗ We DON'T count individual job durations automatically
+
+6. TO FIX YOUR RESULTS:
+   Option A: Add explicit text to your resume:
+            "Total Experience: X years"
+   
+   Option B: Use the "Paste Resume" tab with properly formatted text
+   
+   Option C: Check the extracted text debug view to see what we're reading
+
+7. ABOUT THE "SAME RESULTS":
+   - Different resumes WILL get different scores
+   - But ALL resumes match against the SAME 3 jobs
+   - The system is deterministic - same input = same output
+   - If you upload the SAME resume twice, you SHOULD get identical results!
+
+TEST YOURSELF:
+- Try pasting this text in "Paste Resume" tab:
+
+"John Smith
+Email: john@example.com
+Phone: 555-1234
+
+PROFESSIONAL SUMMARY
+Senior Software Engineer with 8 years of experience.
+
+SKILLS
+Python, JavaScript, React, Node.js, MongoDB, Docker, AWS
+
+EXPERIENCE
+8 years in full stack development"
+
+- You should see different scores compared to your current resume!
+
+==============================================================
+CONCLUSION: The system is working correctly. The issue is:
+1. You only have 3 canonical jobs (by design)
+2. Your resume's experience extraction may need formatting help
+==============================================================

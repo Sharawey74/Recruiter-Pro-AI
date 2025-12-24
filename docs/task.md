@@ -356,8 +356,9 @@ Create FastAPI application to connect all agents.
 - [ ] Load jobs from `jobs.json`
 - [ ] For each job:
   - [ ] Call Agent 2 to generate features
-  - [ ] Call Agent 2.5 to predict match
-- [ ] Call Agent 3 to rank and decide
+  - [ ] Call Agent 3 to predict match
+- [ ] Call Agent 4 to rank and decide
+- [ ] Call Agent 5 for analytics
 - [ ] Return top N matches with explanations
 
 **GET /jobs**
