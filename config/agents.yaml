@@ -1,0 +1,35 @@
+# Agent Configuration
+agents:
+  agent1:
+    enabled: true
+    timeout_seconds: 30
+    
+  agent2:
+    enabled: true
+    timeout_seconds: 30
+    
+  agent3:
+    enabled: true
+    ml_enabled: true
+    timeout_seconds: 30
+    
+  agent4:
+    enabled: true
+    llm_enabled: true
+    timeout_seconds: 30
+
+scoring:
+  # Rule-based weights (must sum to 1.0)
+  skill_weight: 0.60
+  experience_weight: 0.25
+  education_weight: 0.10
+  keyword_weight: 0.05
+  
+  # Hybrid weights (must sum to 1.0)
+  ml_weight: 0.40
+  rule_weight: 0.60
+  
+  # Decision thresholds
+  shortlist_threshold: 0.75
+  review_threshold: 0.50
+  reject_threshold: 0.50

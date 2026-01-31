@@ -1,0 +1,16 @@
+# Database Configuration
+database:
+  type: sqlite  # sqlite or mysql
+  path: data/database/match_history.db
+  
+  # MySQL settings (if type=mysql)
+  # host: localhost
+  # port: 3306
+  # user: recruiter
+  # password: secret
+  # database: recruiter_pro
+
+cache:
+  enabled: true
+  ttl_hours: 24
+  max_size_mb: 100
