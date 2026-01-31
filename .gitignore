@@ -1,81 +1,164 @@
-# Python cache files
+# ====================
+# Python
+# ====================
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
 
-# Cache directories
-.cache/
-
-# GitHub workflows
-.github/
-
-# Virtual environments
+# ====================
+# Virtual Environments
+# ====================
 .venv/
 venv/
 ENV/
 env/
+.virtualenv/
 
-# pytest cache
+# ====================
+# Testing & Coverage
+# ====================
 .pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+.hypothesis/
+.tox/
 
-# IDE
+# ====================
+# IDEs & Editors
+# ====================
 .vscode/
 .idea/
 *.swp
 *.swo
+*.sublime-project
+*.sublime-workspace
+*~
 
-# OS
+# ====================
+# Operating System
+# ====================
 .DS_Store
 Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# Environment variables
+# ====================
+# Environment Variables
+# ====================
 .env
-.env.example
 .env.local
 .env.*.local
+.env.example
 
-# Model files
-models/*.pkl
-models/*.joblib
-*.pkl
-*.joblib
-
-# Processed data
-data/processed/*
-data/json/parsed_profiles/*
-data/json/features/*
-data/json/results/*
-data/reports/*
-
-# Keep directory structure
-!data/processed/.gitkeep
-!data/json/parsed_profiles/.gitkeep
-!data/json/features/.gitkeep
-!data/json/results/.gitkeep
-!data/reports/.gitkeep
-
+# ====================
 # Logs
+# ====================
 *.log
 logs/
 *.log.*
 
-# Temporary files
-*.tmp
-*.temp
-.DS_Store
-Thumbs.db
-
-# Streamlit
-.streamlit/secrets.toml
-
-# Coverage reports
-htmlcov/
-.coverage
-.coverage.*
-coverage.xml
-*.cover
-
-# Distribution / packaging
+# ====================
+# Distribution & Packaging
+# ====================
 dist/
 build/
 *.egg-info/
+*.egg
+.eggs/
+
+# ====================
+# Cache Directories
+# ====================
+.cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ====================
+# Model Files
+# ====================
+models/*.pkl
+models/*.joblib
+models/*.pt
+models/*.pth
+models/*.onnx
+*.pkl
+*.joblib
+
+# ====================
+# Data Directories
+# ====================
+# Processed data and temporary files
+data/processed/raw_profiles/profile_tmp*.json
+data/processed/raw_profiles/profile_test_*.json
+data/json/parsed_profiles/*
+data/json/features/*
+data/json/results/*
+data/reports/*
+data/database/*.db
+data/database/*.sqlite
+data/database/*.sqlite3
+data/cache/*
+data/uploads/*.pdf
+data/uploads/*.docx
+data/uploads/*.doc
+
+# Keep directory structure
+!data/processed/.gitkeep
+!data/processed/raw_profiles/.gitkeep
+!data/json/parsed_profiles/.gitkeep
+!data/json/features/.gitkeep
+!data/json/results/.gitkeep
+!data/reports/.gitkeep
+!data/cache/.gitkeep
+!data/uploads/.gitkeep
+!data/database/.gitkeep
+!logs/.gitkeep
+
+# ====================
+# Frontend (Next.js)
+# ====================
+frontend/.next/
+frontend/node_modules/
+frontend/out/
+frontend/.turbo/
+frontend/.env.local
+frontend/.env.*.local
+frontend/build/
+*.tsbuildinfo
+next-env.d.ts
+package-lock.json
+
+# ====================
+# Temporary Files
+# ====================
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# ====================
+# ML Experiments
+# ====================
+ML/archive/*
+!ML/archive/.gitkeep
+ML/experiments/*
+!ML/experiments/.gitkeep
+ML/notebooks/*.ipynb_checkpoints
+ML/notebooks/**/.ipynb_checkpoints
+ML/models/metadata/*.png
+ML/models/metadata/*.json
+ML/models/metadata/*.txt
+
+# ====================
+# Scripts
+# ====================
+scripts/**/__pycache__/
+scripts/**/temp_*.py
